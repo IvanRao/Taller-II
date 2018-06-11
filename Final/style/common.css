@@ -1,0 +1,591 @@
+html {
+    font-family: 'Abel', sans-serif;
+    font-size: 20px;
+    outline: 0;
+    
+}
+
+body {
+    background-color: lightgrey;
+    margin: 0%;
+    position: relative;
+    
+}
+main {
+    font-weight: bold;
+    padding: 76px 0px 0px 0px;
+    
+}
+
+nav {
+    display: inline-block;
+    width: 78%;
+}
+
+header {
+    height: auto;
+    outline: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999999;
+    position: fixed;
+}
+
+header h1 {
+    font-family: 'Abel', sans-serif;
+    font-size: 40px;
+    margin: 0%;
+}
+
+.botonera {
+    font-size: 25px;
+    width: 100%;
+    padding: 5px 0px 0px 20px;
+    display: inline-block;
+    text-align: left;
+    vertical-align: middle;
+    background-color: #214e91;
+}
+
+.botonera ul a{
+    padding: 0px 6px 0px 20px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.botonera ul a:hover{
+    padding: 0px 6px 0px 20px;
+    color: #dce0e5;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+.botonera ul {
+    padding: 0;
+    margin: 20px;
+    vertical-align: middle;
+    width: 84%;
+    text-align: left;
+    display: inline-block;
+}
+
+.botonera li {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+.logo {
+    text-align: left;
+    display: inline-block;
+    vertical-align: middle;
+    float: left;
+    text-decoration: none;
+}
+
+.logo a {
+    text-decoration: none;
+    color: black;
+}
+
+a {
+    color: #214e91;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.logo p {
+    display: inline-flex;
+    margin: 10px 0px 10px 0px;
+}
+
+.requiem {
+    font-size: 45px;
+    font-family: 'Cabin Sketch', cursive;
+    width: 61%;
+    font-weight: normal;
+}
+
+.turismo { 
+    font-size: 20px;
+}
+
+.fecha {
+    display: inline-block;
+    float: right;
+    padding-top: 2%;
+    padding-right: 3%;
+}
+
+
+h1 {
+    color: black;
+    margin-top: 0;
+}
+
+h3 {
+    text-align: center;
+    color: ghostwhite;
+    padding: 1%;
+    text-decoration: none;
+    transition: 0.2s;
+    margin: auto;
+    display: inline-block;
+}
+
+.destinos a {
+    text-decoration: none;
+    color: darkgray;
+    transition: 0.7s;
+    font-size: 15px;
+}
+
+.destinos a:hover {
+    color: black;
+    background-color: #214e91;
+    transition: 0.7s;
+    text-decoration: none;
+}
+
+.panel {
+    font-size: 15;
+    text-align: right;
+    display: inline-block;
+    padding: 0px 6px 0px 20px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.panel:hover{
+    font-size: 15;
+    text-align: right;
+    display: inline-block;
+    padding: 0px 6px 0px 20px;
+    color: #dce0e5;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+button {
+    color: darkgray;
+    font-size: 15px;
+    align-content: center;
+    background-color: black;
+    border-radius: 5px;
+    border-color: black;
+    transition: 0.7s;
+    padding: 10px 20px;
+    border: 0;
+    outline: 0;
+}
+
+button:hover {
+    color: black;
+    background-color: #214e91;
+    transition: 0.7s;
+    border-color: black;
+}
+
+.botonAcciones {
+    color: darkgray;
+    font-size: 15px;
+    align-content: center;
+    background-color: black;
+    border-radius: 5px;
+    border-color: black;
+    transition: 0.7s;
+    padding: 10px 20px;
+    border: 0;
+    outline: 0;
+}
+
+.botonAcciones:hover {
+    color: black;
+    background-color: #214e91;
+    transition: 0.7s;
+    border-color: black;
+}
+
+hr {
+    margin-left: 1%;
+    margin-right: 1%;
+    margin-bottom: 0;
+    margin-top: 0;
+    
+}
+
+h3:hover {
+    color: #b5382f;
+    text-decoration: none;
+    transition: 0.2s;
+    margin: auto;
+    display: inline-block;
+}
+
+.carousel-title {
+    z-index: 2;
+    position: absolute;
+    top: 160;
+    left: 350;
+    right: 350;
+    background-color: rgba(0,0,0,0.6);
+    padding: 0;
+    margin: 0;
+    border: 0;
+    border-radius: 5px;
+    text-align: center;
+    
+}
+
+.carousel-title h1 {
+    margin: 3%;
+    color: bisque;
+}
+
+
+#contenedor-slider {
+  margin: auto;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  height: 105%;
+}
+
+.slider {
+  display: flex;
+  width: 900%;
+}
+
+.slider__section {
+  width: 100%;
+}
+
+.slider__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.btn-prev, .btn-next {
+  width: 40px;
+  height: 70px;
+  background: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  line-height: 70px;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 10%;
+  font-family: monospace;
+  cursor: pointer;
+  color: white;
+  vertical-align: middle;
+}
+
+.btn-prev:hover, .btn-next:hover {
+  background-color: black;
+}
+
+.btn-prev {
+  left: 10px;
+}
+
+.btn-next {
+  right: 10px;
+}
+
+#acerca {
+    text-align: justify;
+    background-color: rgba(0,0,0,0.2);
+    margin: auto;
+    padding: 10px;
+}
+
+#acerca h1 {
+    text-align: center;
+}
+
+#destinos {
+    text-align: center;
+    background-color: rgba(0,0,0,0.2);
+    margin: auto;
+    display: inline-block;
+    
+}
+
+.destinos {
+    background-color: rgba(0, 0, 0,0.8);
+    padding: 0.5%;
+    margin: 0.5%;
+    border: 0;
+    border-radius: 5px;
+    display: inline-block;
+    width: 45%;
+    text-align: center;
+    vertical-align: middle;
+    color: black;
+    
+}
+
+.destinos-inicio {
+    background-color: rgba(0, 0, 0,0.8);
+    padding: 0.5%;
+    margin: 0.5%;
+    border: 0;
+    border-radius: 5px;
+    display: inline-block;
+    width: 45%;
+    text-align: center;
+    vertical-align: middle;
+    color: black;
+   
+}
+
+.destinos-inicio h2 {
+    color: dimgray;
+   
+}
+
+
+.destinos p {
+    text-align: center;
+    color: ghostwhite;
+}
+
+.destinos-filas img {
+    width: 100%;
+    height: 50%;
+}
+
+
+
+.filas img {
+    width: 100%;
+    height: 55%;
+}
+
+#descripcion {
+    text-align: justify;
+     margin: auto;
+}
+
+.descripcion {
+    overflow: auto;
+    height: 29%;
+    padding: 1%;
+   
+}
+
+.enviar {
+    margin-left: 42%;
+}
+
+#formulario {
+    color: #b5382f;
+    padding: 20px 0px 20px 0px;
+    text-align: center;
+    vertical-align: middle;
+    margin: auto;
+    background-color: rgba(0,0,0,0.2);
+}
+
+#formulario-destino {
+    color: #b5382f;
+    padding: 100px 0px 72px 0px;
+    text-align: center;
+    vertical-align: middle;
+    margin: auto;
+    background-color: rgba(0,0,0,0.2);
+}
+
+#formulario-destino h1 {
+    font-size: 35px;
+    text-align: center;
+    
+}
+
+.formulario {
+    background-color: rgba(0,0,0,0.7);
+    text-align: justify;
+    vertical-align: middle;
+    width: 53%;
+    padding: 10px 10px 10px 10px;
+    margin: auto;
+    border-radius: 5px;
+}
+
+#formulario h1 {
+    font-size: 35px;
+    text-align: center;
+    
+}
+
+#formulario div {
+    background-color: rgba(0,0,0,0.7);
+    text-align: justify;
+    vertical-align: middle;
+    width: 53%;
+    padding: 10px 10px 10px 10px;
+    margin: auto;
+    border-radius: 5px;
+    
+}
+
+
+input {
+    padding: 5px 10px;
+    border: 0;
+    margin: 5px;
+    outline: 0;
+    border-radius: 5px;
+    font-size: 20px;
+    background-color: rgba(0,0,0,0.9);
+    color: white;
+}
+
+
+label {
+    width: 212px;
+    display: inline-block;
+    color: ghostwhite;
+    font-size: 25px;
+    margin: 10px;
+    text-decoration: underline;
+}
+
+#sub { 
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.radio {
+    width: auto;
+    display: block;
+    
+}
+
+#items {
+    text-decoration: none;
+}
+
+#formulario h2 {
+    padding: 0;
+    margin: 0px 0px 0px 90px;
+    text-align: left;
+}
+
+.textarea {
+    width: 805px;
+    text-align: left;
+    background-color: black;
+    color: ghostwhite;
+    outline: none;
+    font-size: 20px;
+    font-family: 'Abel', sans-serif;
+}
+
+.procesar {
+    margin-left: 10px;
+}
+
+footer {
+    color: white;
+    padding: 0px 10px 0px 10px;
+    position: absolute;
+    right: 0;
+    left: 0;
+    text-align: left;
+    background-color: #27579e;
+    margin: auto;
+    margin-bottom: -10.5%;
+    
+}
+
+footer h2 {
+    color: white;
+    text-align: left;
+}
+
+h2 {
+    margin: 0;
+    padding: 0;
+}
+
+footer p {
+    text-align: right;
+    margin: 0;
+}
+
+footer ul {
+    padding: 0px 0px 0px 15px;
+    margin: 0;
+    
+}
+
+.tabla {
+    width: 100%;
+    text-align: center;
+}
+
+.acciones {
+    display: inline-block;
+}
+
+#panel {
+    text-align: right;
+    float: right;
+}
+
+td {
+    width: 495px;
+}
+
+th, td {
+    border-bottom: 1px solid #ddd;
+}
+
+tr:hover {
+    background-color: #969696;
+}
+
+a.botonAcciones {
+    display: inline-block;
+}
+
+.Eliminar {
+    display: inline-block;
+    margin: 5px;
+}
+
+.imagenEditar {
+    background-color: rgba(0,0,0,0.7);
+    text-align: justify;
+    vertical-align: middle;
+    width: 97%;
+    padding: 10px 10px 10px 10px;
+    margin: auto;
+    border-radius: 5px;
+}
+
+.imagenEditar img {
+    width: 100%;
+    height: 50%;
+}
+
+.formulario p {
+    color: ghostwhite;
+    margin-left: 8px;
+    margin-bottom: 1;
+}
