@@ -16,6 +16,8 @@
         }
     }
 
+    $nombreViejo = $galeria[$ind]["nombre"];
+
     if(!isset($destinoEditar)){
         header("Location:panelDeControl.php");
         die();
@@ -45,13 +47,16 @@
         move_uploaded_file($_FILES["imagen"]["tmp_name"],$imagen);
 
         unlink($destinoEditar["imagen"]);
-
     }else{
         $imagen = $destinoEditar["imagen"];
     }
 
+    $descripcionDestino = "images/$nombreViejo/descripcion.txt";
+
+    file_put_contents("images/$nombreViejo/descripcion.txt", $descripcion);
+
     $galeria[$ind]["nombre"] = $nombre;
-    $galeria[$ind]["descripcion"] = $descripcion;
+    $galeria[$ind]["descripcion"] = $descripcionDestino;
     $galeria[$ind]["imagen"] = $imagen;
 
     $json = json_encode($galeria);

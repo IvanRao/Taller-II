@@ -78,6 +78,8 @@
 
                     ?>
 
+                    <input name="id" type="hidden" value=" <?php echo $id ?>">
+
                     <label>Nombre:</label>
                     <input value="<?php echo $destinoEditar["nombre"] ?>" type="text" placeholder="Ingrese nombre del destino" name="nombre">
 
@@ -96,7 +98,7 @@
                     <br>                    
 
                     <label>Descripción:</label>
-                    <textarea name="descripcion" class="textarea" rows="5" placeholder="Escriba aquí la descripcion."><?php echo file_get_contents($destinoEditar[descripcion]) ?></textarea>
+                    <textarea name="descripcion" class="textarea" rows="5" placeholder="Escriba aquí la descripcion."><?php echo file_get_contents($destinoEditar["descripcion"]) ?></textarea>
                     
                     <br>
                     <br>
