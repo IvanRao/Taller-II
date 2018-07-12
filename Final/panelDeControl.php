@@ -41,6 +41,22 @@ require("funciones.php");
 
                 <h1>Destinos</h1>
 
+                <?php
+
+                error_reporting(E_ALL ^ E_NOTICE);
+
+                $resultado = $_GET['resultado'];
+
+                if ($resultado=="error"):
+                    $errores= "Por favor ingresa todos los datos";
+                endif;
+
+                if (!empty($errores)): 
+                    echo "<h1>$errores</h1>";
+                endif;
+
+                ?>
+
                 <a href="nuevoDestino.php">
                     <button class="button" id="panel">
                         Añadir Destino  

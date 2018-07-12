@@ -79,6 +79,7 @@
                     ?>
 
                     <input name="id" type="hidden" value=" <?php echo $id ?>">
+                    <input name="imagenActual" type="hidden" value=" <?php echo $destinoEditar["url"] ?>">
 
                     <label>Nombre:</label>
                     <input value="<?php echo $destinoEditar["nombre"] ?>" type="text" placeholder="Ingrese nombre del destino" name="nombre">

@@ -29,7 +29,6 @@
     }
   }
 
-
   if(!is_dir("images/$nombre")){
     mkdir("images/$nombre");	  
   }
@@ -39,7 +38,7 @@
     die();
   }
 
-  $nombreDestino = "images/$nombre/".time().".jpg";
+  $nombreDestino = "images/$nombre/" . time().".jpg";
 
   $descripcionDestino = "images/$nombre/descripcion.txt";
 

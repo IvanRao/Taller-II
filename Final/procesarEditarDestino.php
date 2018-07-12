@@ -7,6 +7,7 @@
     }
 
     $id = $_POST["id"];
+    $imagenActual = $_POST["imagenActual"];
 
     foreach($galeria as $indice => $destino){
 
@@ -17,6 +18,8 @@
     }
 
     $nombreViejo = $galeria[$ind]["nombre"];
+    $path = getcwd();
+    $path = $path . "/" . "images";
 
     if(!isset($destinoEditar)){
         header("Location:panelDeControl.php");
@@ -27,7 +30,7 @@
         $nombre = $_POST["nombre"];
     }else{
         if (empty($_POST["nombre"])) {
-            header("Location:editarDestino.php?resultado=error");
+            header("Location:paneldecontrol.php?resultado=error");
             die();
         }
     }
@@ -36,28 +39,34 @@
         $descripcion = $_POST["descripcion"];
     }else{
         if (empty($_POST["descripcion"])) {
-            header("Location:editarDestino.php?id=$ind?resultado=error");
+            header("Location:paneldecontrol.php?resultado=error");
             die();
         }
     }
 
-    if($_FILES["imagen"]["size"] > 0){
-        $imagen = "img/".time().".jpg";
+	if($_FILES["imagen"]["size"] > 0){
+		$imagen = "images/" . $nombre . "/" . time().".jpg";
+		
+		move_uploaded_file($_FILES["imagen"]["tmp_name"],$imagen);
+		
+		//con esto borramos la imagen vieja.
+		unlink(ltrim($imagenActual));
+		
+	}else{
+        $arrayImagen = explode("/", $imagenActual);
+        $arrayImagen[1] = $nombre;
+        $imagen = implode("/",$arrayImagen);
+	}
 
-        move_uploaded_file($_FILES["imagen"]["tmp_name"],$imagen);
+    rename("$path/$nombreViejo/", "$path/$nombre/" );
 
-        unlink($destinoEditar["imagen"]);
-    }else{
-        $imagen = $destinoEditar["imagen"];
-    }
+    $descripcionDestino = "images/$nombre/descripcion.txt";
 
-    $descripcionDestino = "images/$nombreViejo/descripcion.txt";
-
-    file_put_contents("images/$nombreViejo/descripcion.txt", $descripcion);
+    file_put_contents($descripcionDestino, $descripcion);
 
     $galeria[$ind]["nombre"] = $nombre;
     $galeria[$ind]["descripcion"] = $descripcionDestino;
-    $galeria[$ind]["imagen"] = $imagen;
+    $galeria[$ind]["url"] = $imagen;
 
     $json = json_encode($galeria);
 
