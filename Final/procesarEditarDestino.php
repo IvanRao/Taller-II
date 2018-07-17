@@ -2,7 +2,7 @@
     require_once("database/galeria.php");
 
     if(empty($_POST["id"])){
-        header("Location:panelDeControl.php");
+        header("Location:panelDeControlDestinos.php");
         die();
     }
 
@@ -18,11 +18,9 @@
     }
 
     $nombreViejo = $galeria[$ind]["nombre"];
-    $path = getcwd();
-    $path = $path . "/" . "images";
 
     if(!isset($destinoEditar)){
-        header("Location:panelDeControl.php");
+        header("Location:panelDeControlDestinos.php");
         die();
     }
 
@@ -30,7 +28,7 @@
         $nombre = $_POST["nombre"];
     }else{
         if (empty($_POST["nombre"])) {
-            header("Location:paneldecontrol.php?resultado=error");
+            header("Location:panelDeControlDestinos.php?resultado=error");
             die();
         }
     }
@@ -39,7 +37,7 @@
         $descripcion = $_POST["descripcion"];
     }else{
         if (empty($_POST["descripcion"])) {
-            header("Location:paneldecontrol.php?resultado=error");
+            header("Location:panelDeControlDestinos.php?resultado=error");
             die();
         }
     }
@@ -58,7 +56,7 @@
         $imagen = implode("/",$arrayImagen);
 	}
 
-    rename("$path/$nombreViejo/", "$path/$nombre/" );
+    rename("images/$nombreViejo/", "images/$nombre/" );
 
     $descripcionDestino = "images/$nombre/descripcion.txt";
 
@@ -72,7 +70,7 @@
 
     file_put_contents("database/galeria.json",$json);
 
-    header("Location:panelDeControl.php");
+    header("Location:panelDeControlDestinos.php");
 
 ?>
 

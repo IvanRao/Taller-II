@@ -1,6 +1,6 @@
 <?php
 
-require("database/galeria.php");
+require("database/usuarios.php");
 require("funciones.php");
 
 ?>
@@ -39,7 +39,7 @@ require("funciones.php");
         <main>
             <div id="acerca">
 
-                <h1>Destinos</h1>
+                <h1>Usuarios</h1>
 
                 <?php
 
@@ -57,9 +57,9 @@ require("funciones.php");
 
                 ?>
 
-                <a href="nuevoDestino.php">
+                <a href="nuevoUsuario.php">
                     <button class="button" id="panel">
-                        Añadir Destino  
+                        Añadir usuario  
                     </button>
                 </a>
 
@@ -67,10 +67,12 @@ require("funciones.php");
                     <tr>
                         <th><h2>Id</h2></th>
                         <th><h2>Nombre</h2></th>
+                        <th><h2>Mail</h2></th>
+                        <th><h2>Rol</h2></th>
                         <th><h2>Acciones</h2></th>
                     </tr>
 
-                <?php mostrarPanelDeControl($galeria) ?>
+                <?php mostrarPanelDeControlUsuarios($usuarios) ?>
 
                 </table>
 

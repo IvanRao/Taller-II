@@ -84,7 +84,7 @@
         <br>
         <br>
         
-        <input type="date" name="fechaviaje"  >
+        <input type="date" name="fechaviaje">
         
         <br>
         <br>

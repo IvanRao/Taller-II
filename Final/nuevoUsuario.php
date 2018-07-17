@@ -33,7 +33,7 @@
 
         <section id="formulario-destino">
 
-            <h1>Registrarse</h1>
+            <h1>Nuevo usuario</h1>
 
             <div class="formulario">
 
@@ -72,6 +72,14 @@
 
                     <label>Contraseña:</label>
                     <input type="password" placeholder="Ingrese aqui su contraseña" name="contraseña">
+                    
+                    <br>
+
+                    <label>Rol:</label>
+                    <select name="rol">
+                            <option value='0'>Usuario comun</option>
+                            <option value='1'>Administrador</option>
+                    </select>
 
                     <br>
                     <br>

@@ -1,3 +1,26 @@
+<?php
+    require_once("database/usuarios.php");
+
+    if(!empty($_GET)){
+		
+		if(!empty($_GET["id"])){
+			
+			$id = $_GET["id"];
+			
+			foreach($usuarios as $posicion => $usuario){
+				
+				if($usuario["id"] == $id){
+					$usuarioEditar = $usuarios[$posicion];
+                }
+
+			}
+						
+		}
+	
+	}
+    
+?>
+
 <html>
     <head>
         <title>
@@ -33,48 +56,60 @@
 
         <section id="formulario-destino">
 
-            <h1>Registrarse</h1>
+            <h1>Editar usuario</h1>
 
             <div class="formulario">
 
-                <form action="procesarRegistro.php" method="post" enctype="multipart/form-data">
+                <form action="procesarEditarUsuario.php" method="post" enctype="multipart/form-data">
 
                     <?php
 
-                        error_reporting(E_ALL ^ E_NOTICE);
+                    error_reporting(E_ALL ^ E_NOTICE);
 
-                        $resultado = $_GET['resultado'];
+                    $resultado = $_GET['resultado'];
 
-                        if ($resultado=="error"):
-                            $errores= "Por favor ingresa todos los datos";
-                        endif;
+                    if ($resultado=="error"):
+                    $errores= "Por favor ingresa todos los datos";
+                    endif;
 
-                        if (!empty($errores)): 
-                            echo "<h1>$errores</h1>";
-                        endif;
+                    if (!empty($errores)): 
+                    echo "<h1>$errores</h1>";
+                    endif;
 
                     ?>
 
+                    <input name="id" type="hidden" value=" <?php echo $id ?>">
+
                     <label>Nombre:</label>
-                    <input type="text" placeholder="Ingrese aqui su nombre" name="nombre">
+                    <input value="<?php echo $usuarioEditar["nombre"] ?>" type="text" placeholder="Ingrese nombre del usuario" name="nombre">
 
                     <br>
-
+                    
                     <label>Apellido:</label>
-                    <input type="text" placeholder="Ingrese aqui su apellido" name="apellido">
+                    <input value="<?php echo $usuarioEditar["apellido"] ?>" type="text" placeholder="Ingrese apellido del usuario" name="apellido">
 
-                    <br>                    
+                    <br>
 
                     <label>Mail:</label>
-                    <input type="text" placeholder="Ingrese aqui su mail" name="mail">
-
+                    <input value="<?php echo $usuarioEditar["mail"] ?>" type="text" placeholder="Ingrese mail del usuario" name="mail">
+                    
+                    <br>
+                    
+                    <label>Rol:</label>
+                    <select name="rol">
+                        <?php if ($usuarioEditar["rol"] == 1) {
+                            echo "<option value='0'>Usuario comun</option>";
+                            echo "<option value='1' selected>Administrador</option>";
+                        }else{
+                            echo "<option value='0' selected>Usuario comun</option>";
+                            echo "<option value='1'>Administrador</option>";
+                        }
+                        ?>
+                    </select>
+                    
+                    <br>
                     <br>
 
-                    <label>Contraseña:</label>
-                    <input type="password" placeholder="Ingrese aqui su contraseña" name="contraseña">
-
-                    <br>
-                    <br>
                     <button type="submit" class="enviar">Enviar</button>
 
                 </form>        

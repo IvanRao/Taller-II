@@ -2,7 +2,7 @@
 	require_once("database/galeria.php");
 	
 	if(empty($_POST["id"])){
-		header("Location:panelDeControl.php");
+		header("Location:panelDeControlDestinos.php");
 		die();
 	}
 	
@@ -16,7 +16,7 @@
 	}
 	
 	if(!isset($ind)){
-		header("Location:panelDeControl.php");
+		header("Location:panelDeControlDestinos.php");
 		die();
 	}
 
@@ -37,6 +37,6 @@
 	
 	file_put_contents("database/galeria.json",$json);
 	
-	header("Location:panelDeControl.php");
+	header("Location:panelDeControlDestinos.php");
 	
 	

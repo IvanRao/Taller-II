@@ -44,66 +44,57 @@
 
         if (!empty($_POST["nombre"])) {
             $nombreprincipal = ($_POST["nombre"]);
-            }else{
-            if (empty($_POST["nombre"])) {
-                header("Location:index.php?seccion=reservas&resultado=error");
-            }
+        }else{
+            header("Location:index.php?seccion=reservas&resultado=error");
         }
+        
         if (!empty($_POST["apellido"])) {
             $apellido = ($_POST["apellido"]);
-            }else{
-            if (empty($_POST["apellido"])) {
-                header("Location:index.php?seccion=reservas&resultado=error");
-            }
+        }else{
+            header("Location:index.php?seccion=reservas&resultado=error");
         }
+        
         if (!empty($_POST["email"])) {
             $email = ($_POST["email"]);
-            }else{
-            if (empty($_POST["email"])) {
-                header("Location:index.php?seccion=reservas&resultado=error");
-            }
+        }else{
+            header("Location:index.php?seccion=reservas&resultado=error");
         }
+        
         if (!empty($_POST["destino"])) {
             $destino = ($_POST["destino"]);
-            }else{
-            if (empty($_POST["destino"])) {
-                header("Location:index.php?seccion=reservas&resultado=error");
-            }
+        }else{
+            header("Location:index.php?seccion=reservas&resultado=error");
         }
+        
         if (!empty($_POST["transporte"])) {
             $transporte = ($_POST["transporte"]);
-            }else{
-            if (empty($_POST["transporte"])) {
-                header("Location:index.php?seccion=reservas&resultado=error");
-            }
+        }else{
+            header("Location:index.php?seccion=reservas&resultado=error");
         }
+        
         if (!empty($_POST["fechaviaje"])) {
             $fechaviaje = ($_POST["fechaviaje"]);
-            }else{
-            if (empty($_POST["fechaviaje"])) {
-                header("Location:index.php?seccion=reservas&resultado=error");
-            }
+            var_dump($fechaviaje);
+        }else{
+            header("Location:index.php?seccion=reservas&resultado=error");
         }
+        
         if (!empty($_POST["adultos"])) {
             $adultos = ($_POST["adultos"]);
-            }else{
-            if (empty($_POST["adultos"])) {
-                header("Location:index.php?seccion=reservas&resultado=error");
-            }
+        }else{
+            header("Location:index.php?seccion=reservas&resultado=error");
         }
+        
         if (!empty($_POST["ninos"])) {
             $ninos = ($_POST["ninos"]);
-            }else{
-            if (empty($_POST["ninos"])) {
-                header("Location:index.php?seccion=reservas&resultado=error");
-            }
+        }else{
+            header("Location:index.php?seccion=reservas&resultado=error");
         }
+
         if (!empty($_POST["pedidos"])) {
             $pedidos = ($_POST["pedidos"]);
-            }else{
-            if (empty($_POST["pedidos"])) {
+        }else{
             $pedidos = "No hay pedidos especiales.";
-            }
         }
 
     ?>
@@ -136,7 +127,6 @@
              }
              echo "</ul>";
         }
-        echo "<br>";
         echo "Pedidos Especiales: ".$pedidos;
 
     ?>

@@ -2,13 +2,14 @@ html {
     font-family: 'Abel', sans-serif;
     font-size: 20px;
     outline: 0;
-    
+    position: relative;
 }
 
 body {
     background-color: lightgrey;
+    background-color: rgba(0,0,0,0.4);
     margin: 0%;
-    position: relative;
+    /* position: relative; */
     
 }
 main {
@@ -308,7 +309,6 @@ h3:hover {
 
 #acerca {
     text-align: justify;
-    background-color: rgba(0,0,0,0.2);
     margin: auto;
     padding: 10px;
 }
@@ -398,7 +398,6 @@ h3:hover {
     text-align: center;
     vertical-align: middle;
     margin: auto;
-    background-color: rgba(0,0,0,0.2);
 }
 
 #formulario-destino {
@@ -407,7 +406,6 @@ h3:hover {
     text-align: center;
     vertical-align: middle;
     margin: auto;
-    background-color: rgba(0,0,0,0.2);
 }
 
 #formulario-destino h1 {
@@ -510,7 +508,7 @@ footer {
     background-color: #27579e;
     margin: auto;
     margin-bottom: -10.5%;
-    
+    bottom: 0;
 }
 
 footer h2 {
@@ -588,4 +586,22 @@ a.botonAcciones {
     color: ghostwhite;
     margin-left: 8px;
     margin-bottom: 1;
+}
+
+.panelDeControl {
+    text-align: justify;
+    background-color: rgba(0,0,0,0.2);
+    margin: auto;
+    padding: 10px;
+}
+
+select {
+    padding: 5px 10px;
+    border: 0;
+    margin: 5px;
+    outline: 0;
+    border-radius: 5px;
+    font-size: 20px;
+    background-color: rgba(0,0,0,0.9);
+    color: white;
 }

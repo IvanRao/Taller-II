@@ -89,9 +89,9 @@ function MostrarDestinos(){
    echo "</div>";		
 }
 
-// <!-- FUNCION PARA MOSTRAR EL PANEL DE CONTROL -->
+// <!-- FUNCION PARA MOSTRAR EL PANEL DE CONTROL DE DESTINOS -->
 
-function mostrarPanelDeControl($galeria){
+function mostrarPanelDeControlDestinos($galeria){
 
     foreach($galeria as $destino):
         
@@ -102,10 +102,6 @@ function mostrarPanelDeControl($galeria){
             <td><?php echo $destino["nombre"]; ?></td>
 
             <td class="acciones">
-                <!-- <a href="editarDestino.php?id</?php echo $destino["id"]; ?>" class="botonAcciones">
-                    <i class="material-icons">mode_edit</i>
-                </a> -->
-
                 <form action="editarDestino.php" method="get" class="Eliminar">
                     <input type="hidden" value="<?php echo $destino["id"]; ?>" name="id">
                     <button type="submit" class="botonAcciones">
@@ -123,8 +119,43 @@ function mostrarPanelDeControl($galeria){
         </tr>
 
         <?php
-        endforeach;
+    endforeach;
 
+}
+
+// <!-- FUNCION PARA MOSTRAR EL PANEL DE CONTROL DE USUARIOS -->
+
+function mostrarPanelDeControlUsuarios($usuarios){
+
+    foreach($usuarios as $usuario):
+        
+        ?>
+
+        <tr>
+            <td><?php echo $usuario["id"]; ?></td>
+            <td><?php echo $usuario["nombre"] . " " . $usuario["apellido"]; ?></td>
+            <td><?php echo $usuario["mail"]; ?></td>
+            <td><?php echo $usuario["rol"]; ?></td>
+
+            <td class="acciones">
+                <form action="editarUsuario.php" method="get" class="Eliminar">
+                    <input type="hidden" value="<?php echo $usuario["id"]; ?>" name="id">
+                    <button type="submit" class="botonAcciones">
+                        <i class="material-icons">mode_edit</i>
+                    </button>
+                </form>
+
+                <form action="procesarEliminarUsuario.php" method="post" class="Eliminar">
+                    <input type="hidden" value="<?php echo $usuario["id"]; ?>" name="id">
+                    <button type="submit" class="botonAcciones">
+                        <i class="material-icons">delete</i>
+                    </button>
+                </form>
+            </td>
+        </tr>
+
+        <?php
+    endforeach;
 
 }
 
@@ -154,7 +185,7 @@ function mostrarBotonera($categorias){
 
     </ul>
 
-    <a class="panel" href="panelDeControl.php">Panel de Control</a>
+    <a class="panel" href="panelDeControlMenu.php">Panel de Control</a>
 
     <?php
 

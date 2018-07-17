@@ -1,3 +1,11 @@
+<?php
+
+require ('database/galeria.php');
+// require ('arrays.php');
+require ('funciones.php');
+
+?>
+
 <html>
     <head>
         <title>
@@ -8,8 +16,7 @@
         <link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative" rel="stylesheet">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch" rel="stylesheet">
-        <meta charset ="utf-8">
-
+        <meta charset ="utf-8">            
         <!-- JQUERIES-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
         <script src="script/common.js"></script>
@@ -27,53 +34,21 @@
                         <i class="material-icons">&#xE195;</i>
                     </a>
                 </div>
+
+                <!-- <nav>
+
+                    <?php //mostrarBotonera($categorias); ?>
+
+                </nav> -->
             </div>
         </header>
-        <!-- %%%%%%%%%% CUERPO DE LA PAGINA %%%%%%%%% -->
 
-        <section id="formulario-destino">
+        <!-- %%%%%%%%%% CUERPO %%%%%%%%%% -->     
+        <main> 
+        <a class="panel" href="panelDeControlDestinos.php">Panel de control de Destinos</a>
+        <a class="panel" href="panelDeControlUsuarios.php">Panel de control de Usuarios</a>
 
-            <h1>Login</h1>
-
-            <div class="formulario">
-
-                <form action="procesarLogin.php" method="post" enctype="multipart/form-data">
-
-                    <?php
-
-                        error_reporting(E_ALL ^ E_NOTICE);
-
-                        $resultado = $_GET['resultado'];
-
-                        if ($resultado=="error"):
-                            $errores= "Por favor ingresa todos los datos";
-                        endif;
-
-                        if (!empty($errores)): 
-                            echo "<h1>$errores</h1>";
-                        endif;
-
-                    ?>                
-
-                    <label>Mail:</label>
-                    <input type="text" placeholder="Ingrese aqui su mail" name="mail">
-
-                    <br>
-
-                    <label>Contraseña:</label>
-                    <input type="password" placeholder="Ingrese aqui su contraseña" name="contraseña">
-                    
-                    <br>
-
-                    <br>
-                    <br>
-                    <button type="submit" class="enviar">Enviar</button>
-
-                </form>        
-            </div>
-
-        </section>
-
+        </main>
         <!-- %%%%%%%%%% FOOTER %%%%%%%%%% -->                    
         <footer>
             <h2>Contacto:</h2>

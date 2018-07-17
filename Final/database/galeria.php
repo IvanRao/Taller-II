@@ -66,8 +66,6 @@
         $galeria["foto10"] ["url"] =  "images/Salta/salta.jpg";
         $galeria["foto10"] ["nombre"] =  "Salta";
         $galeria["foto10"] ["descripcion"] =  "images/Salta/descripcion.txt";
-
-   
        
    }
 ?>
