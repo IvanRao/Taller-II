@@ -1,6 +1,5 @@
 
 <?php 
-
 require("errores.php"); 
 
 // <!-- FUNCION PARA MOSTRAR LAS FOTOS DEL ARRAY -->
@@ -138,13 +137,6 @@ function mostrarPanelDeControlUsuarios($usuarios){
             <td><?php echo $usuario["rol"]; ?></td>
 
             <td class="acciones">
-                <form action="editarUsuario.php" method="get" class="Eliminar">
-                    <input type="hidden" value="<?php echo $usuario["id"]; ?>" name="id">
-                    <button type="submit" class="botonAcciones">
-                        <i class="material-icons">mode_edit</i>
-                    </button>
-                </form>
-
                 <form action="procesarEliminarUsuario.php" method="post" class="Eliminar">
                     <input type="hidden" value="<?php echo $usuario["id"]; ?>" name="id">
                     <button type="submit" class="botonAcciones">
@@ -184,11 +176,46 @@ function mostrarBotonera($categorias){
     ?>
 
     </ul>
-
-    <a class="panel" href="panelDeControlMenu.php">Panel de Control</a>
+    
+    <?php
+    
+        if(empty($_SESSION["usuario"])){
+    ?>
+            
+        <li>
+            <a href="login.php" class="panel">
+                Iniciar sesión
+            </a>
+        </li>
 
     <?php
+        }else{
 
+            $nombre = $_SESSION["usuario"]["nombre"]. " " .$_SESSION["usuario"]["apellido"];
+            ?>
+            <div class="dropdown">
+            <button onclick="menuDesplegable()" class="dropbtn"><?php echo $nombre?></button>
+            <div id="myDropdown" class="dropdown-content">
+
+            <?php if ($_SESSION["usuario"]["rol"] == 1){
+                    ?>
+                    <a href="panelDeControlMenu.php">Panel de control</a>
+                    <a href="perfilUsuario.php">Perfil</a>
+                    <a href="logout.php">Cerrar sesión</a>
+                    <?php
+                }else{
+                    ?>
+                    <a href="perfilUsuario.php">Perfil</a>
+                    <a href="logout.php">Cerrar sesión</a>
+                    <?php
+                };
+            ?> 
+            </div>
+            </div>
+            
+            <?php
+        };
+        
 }
 
 // <!-- FUNCION PARA MOSTRAR LAS SECCIONES -->

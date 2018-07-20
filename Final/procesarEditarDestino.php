@@ -70,7 +70,7 @@
 
     file_put_contents("database/galeria.json",$json);
 
-    header("Location:panelDeControlDestinos.php");
+    header("Location:panelDeControlDestinos.php?resultado=exitoMod");
 
 ?>
 

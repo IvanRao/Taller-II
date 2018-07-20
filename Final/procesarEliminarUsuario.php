@@ -26,6 +26,6 @@
 	
 	file_put_contents("database/usuarios.json",$json);
 	
-	header("Location:panelDeControlUsuarios.php");
+	header("Location:panelDeControlUsuarios.php?resultado=exitoEliminar");
 	
 	

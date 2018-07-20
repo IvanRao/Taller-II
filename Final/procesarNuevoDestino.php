@@ -54,5 +54,5 @@
 
   file_put_contents("database/galeria.json",$arrayJson);
 
-  header("Location:panelDeControl.php");
+  header("Location:panelDeControlDestinos?resultado=exitoCrear.php");
 

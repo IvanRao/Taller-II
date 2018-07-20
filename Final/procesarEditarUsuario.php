@@ -1,12 +1,8 @@
  <?php
-    require_once("database/galeria.php");
+    require_once("database/usuarios.php");
+    session_start();
 
-    if(empty($_POST["id"])){
-        header("Location:panelDeControlUsuarios.php");
-        die();
-    }
-
-    $id = $_POST["id"];
+    $id = $_SESSION["usuario"]["id"];
 
     foreach($usuarios as $indice => $usuario){
 
@@ -17,7 +13,7 @@
     }
 
     if(!isset($usuarioEditar)){
-        header("Location:panelDeControlUsuarios.php");
+        header("Location:index.php");
         die();
     }
 
@@ -25,16 +21,7 @@
         $nombre = $_POST["nombre"];
     }else{
         if (empty($_POST["nombre"])) {
-            header("Location:panelDeControlUsuarios.php?resultado=error");
-            die();
-        }
-    }
-
-    if (!empty($_POST["nombre"])) {
-        $nombre = $_POST["nombre"];
-    }else{
-        if (empty($_POST["nombre"])) {
-            header("Location:panelDeControlUsuarios.php?resultado=error");
+            header("Location:perfilUsuario.php?resultado=error");
             die();
         }
     }
@@ -43,7 +30,7 @@
         $apellido = $_POST["apellido"];
     }else{
         if (empty($_POST["apellido"])) {
-            header("Location:panelDeControlUsuarios.php?resultado=error");
+            header("Location:perfilUsuario.php?resultado=error");
             die();
         }
     }
@@ -52,31 +39,30 @@
         $mail = $_POST["mail"];
     }else{
         if (empty($_POST["mail"])) {
-            header("Location:panelDeControlUsuarios.php?resultado=error");
+            header("Location:perfilUsuario.php?resultado=error");
             die();
         }
     }
 
-    if (!empty($_POST["rol"])) {
-        $rol = $_POST["rol"];
+    if (!empty($_POST["contraseña"])) {
+        $contraseña = password_hash($_POST["contraseña"],PASSWORD_DEFAULT);
     }else{
-        if (empty($_POST["rol"])) {
-            header("Location:panelDeControlUsuarios.php?resultado=error");
-            die();
-        }
+        $contraseña = $_SESSION["usuario"]["contraseña"];
     }
 
     $usuarios[$ind]["nombre"] = $nombre;
     $usuarios[$ind]["apellido"] = $apellido;
     $usuarios[$ind]["mail"] = $mail;
-    $usuarios[$ind]["rol"] = $rol;
+    $usuarios[$ind]["contraseña"] = $contraseña;
+    $usuarios[$ind]["rol"] = $_SESSION["usuario"]["rol"];
 
+    $_SESSION["usuario"] = $usuarios[$ind];
 
     $json = json_encode($usuarios);
 
-    file_put_contents("database/galeria.json",$json);
+    file_put_contents("database/usuarios.json",$json);
 
-    header("Location:panelDeControlUsuarios.php");
+    header("Location:perfilUsuario.php?resultado=exitoMod");
 
 ?>
 

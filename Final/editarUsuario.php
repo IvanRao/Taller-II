@@ -92,21 +92,7 @@
 
                     <label>Mail:</label>
                     <input value="<?php echo $usuarioEditar["mail"] ?>" type="text" placeholder="Ingrese mail del usuario" name="mail">
-                    
-                    <br>
-                    
-                    <label>Rol:</label>
-                    <select name="rol">
-                        <?php if ($usuarioEditar["rol"] == 1) {
-                            echo "<option value='0'>Usuario comun</option>";
-                            echo "<option value='1' selected>Administrador</option>";
-                        }else{
-                            echo "<option value='0' selected>Usuario comun</option>";
-                            echo "<option value='1'>Administrador</option>";
-                        }
-                        ?>
-                    </select>
-                    
+                                        
                     <br>
                     <br>
 

@@ -1,3 +1,9 @@
+<?php
+require ('database/galeria.php');
+require ('funciones.php');
+session_start();
+
+?>
 <html>
     <head>
         <title>
@@ -27,17 +33,23 @@
                         <i class="material-icons">&#xE195;</i>
                     </a>
                 </div>
+
+                <nav>
+
+                    <?php mostrarBotonera($categorias); ?>
+
+                </nav>
             </div>
         </header>
         <!-- %%%%%%%%%% CUERPO DE LA PAGINA %%%%%%%%% -->
 
         <section id="formulario-destino">
 
-            <h1>Registrarse</h1>
+            <h1>Perfil de <?php echo $_SESSION["usuario"]["nombre"]. " " .$_SESSION["usuario"]["apellido"] ?></h1>
 
             <div class="formulario_usuarios">
 
-                <form action="procesarRegistro.php" method="post" enctype="multipart/form-data">
+                <form action="procesarEditarUsuario.php" method="post" enctype="multipart/form-data">
 
                     <?php
 
@@ -49,21 +61,25 @@
                             $errores= "Por favor ingresa todos los datos";
                             echo "<h1 class='error'>$errores</h1>";
                         endif;
+                        if ($resultado=="exito"):
+                            $errores= "Usuario modificado con exito!";
+                            echo "<h1 class='exito'>$errores</h1>";
+                        endif;
 
                     ?>
 
                     <label>Nombre:</label>
-                    <input type="text" placeholder="Ingrese aqui su nombre" name="nombre">
+                    <input type="text" value="<?php echo $_SESSION["usuario"]["nombre"];?>" name="nombre">
 
                     <br>
 
                     <label>Apellido:</label>
-                    <input type="text" placeholder="Ingrese aqui su apellido" name="apellido">
+                    <input type="text" value="<?php echo $_SESSION["usuario"]["apellido"];?>" name="apellido">
 
                     <br>                    
 
                     <label>Mail:</label>
-                    <input type="text" placeholder="Ingrese aqui su mail" name="mail">
+                    <input type="text" value="<?php echo $_SESSION["usuario"]["mail"];?>" name="mail">
 
                     <br>
 
@@ -72,7 +88,7 @@
 
                     <br>
                     <br>
-                    <button type="submit" class="enviar">Enviar</button>
+                    <button type="submit" class="enviar">Modificar</button>
 
                 </form>        
             </div>
@@ -89,6 +105,26 @@
             </ul>
             <br>
             <p>Ivan Rao™<p>
-        </footer>                                                      
+        </footer>  
+        <script>
+
+            function menuDesplegable() {
+                document.getElementById("myDropdown").classList.toggle("show");
+            }
+
+            window.onclick = function(event) {
+            if (!event.target.matches('.dropbtn')) {
+
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+                }
+            }
+            }
+        </script>                                                     
     </body>
 </html>

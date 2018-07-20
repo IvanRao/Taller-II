@@ -47,10 +47,11 @@
 
                         if ($resultado=="error"):
                             $errores= "Por favor ingresa todos los datos";
+                            echo "<h1 class='error'>$errores</h1>";
                         endif;
-
-                        if (!empty($errores)): 
-                            echo "<h1>$errores</h1>";
+                        if ($resultado=="exito"):
+                            $errores= "Usuario modificado con exito!";
+                            echo "<h1 class='exito'>$errores</h1>";
                         endif;
 
                     ?>

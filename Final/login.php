@@ -35,7 +35,7 @@
 
             <h1>Login</h1>
 
-            <div class="formulario">
+            <div class="formulario_usuarios">
 
                 <form action="procesarLogin.php" method="post" enctype="multipart/form-data">
 
@@ -47,10 +47,11 @@
 
                         if ($resultado=="error"):
                             $errores= "Por favor ingresa todos los datos";
+                            echo "<h1 class='error'>$errores</h1>";
                         endif;
-
-                        if (!empty($errores)): 
-                            echo "<h1>$errores</h1>";
+                        if ($resultado=="exitoCrear"):
+                            $errores= "Usuario creado con exito, ya se puede loguear!";
+                            echo "<h1 class='exito'>$errores</h1>";
                         endif;
 
                     ?>                
@@ -62,13 +63,17 @@
 
                     <label>Contraseña:</label>
                     <input type="password" placeholder="Ingrese aqui su contraseña" name="contraseña">
+
+                    <br>
+                    <br>
+                    
+                    <button type="submit" class="enviar">Enviar</button>
                     
                     <br>
-
                     <br>
-                    <br>
-                    <button type="submit" class="enviar">Enviar</button>
-
+                    <div class="div_registrarse">
+                        <a class="registrarse" href="registrarse.php">Hace click aca para registrarte!</a>
+                    </div>
                 </form>        
             </div>
 

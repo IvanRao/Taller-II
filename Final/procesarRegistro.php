@@ -23,11 +23,9 @@ $json = json_encode($usuarios);
 
 
 if(file_put_contents("database/usuarios.json",$json)){
-    if(!empty($_POST["rol"])){
-        header("Location:panelDeControlUsuarios.php");
-    }else{
-        header("Location:login.php");
-    }
+
+    header("Location:login.php?resultado=exitoCrear");
+    
 }
 
 

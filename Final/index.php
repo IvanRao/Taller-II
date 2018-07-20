@@ -4,6 +4,8 @@ require ('database/galeria.php');
 // require ('arrays.php');
 require ('funciones.php');
 
+session_start();
+
 ?>
 
 <html>
@@ -46,6 +48,26 @@ require ('funciones.php');
         <!-- %%%%%%%%%% CUERPO %%%%%%%%%% -->     
 
         <main>  
+            <?php
+
+                error_reporting(E_ALL ^ E_NOTICE);
+
+                $resultado = $_GET['resultado'];
+
+                if ($resultado=="error"):
+                    $errores= "Hubo un error al loguearse, por favor intente de nuevo";
+                    echo "<div id='acerca'>";
+                    echo "<h1 class='error'>$errores</h1>";
+                    echo "</div>";
+                endif;
+                if ($resultado=="exito"):
+                    $errores= "Sesión iniciada con exito!";
+                    echo "<div id='acerca'>";
+                    echo "<h1 class='exito'>$errores</h1>";
+                    echo "</div>";
+                endif;
+
+            ?>
 
             <?php
 
@@ -64,6 +86,26 @@ require ('funciones.php');
             </ul>
             <br>
             <p>Ivan Rao™<p>
-        </footer>                                                      
+        </footer>           
+        <script>
+
+            function menuDesplegable() {
+                document.getElementById("myDropdown").classList.toggle("show");
+            }
+
+            window.onclick = function(event) {
+            if (!event.target.matches('.dropbtn')) {
+
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+                }
+            }
+            }
+        </script>                                           
     </body>
 </html>

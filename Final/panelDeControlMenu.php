@@ -3,6 +3,7 @@
 require ('database/galeria.php');
 // require ('arrays.php');
 require ('funciones.php');
+session_start();
 
 ?>
 
@@ -45,9 +46,23 @@ require ('funciones.php');
 
         <!-- %%%%%%%%%% CUERPO %%%%%%%%%% -->     
         <main> 
+        <div id="acerca">
+            <?php
+
+                error_reporting(E_ALL ^ E_NOTICE);
+
+                $resultado = $_GET['resultado'];
+
+                if ($resultado=="exito"):
+                    $errores= "Sesión iniciada con exito!";
+                    echo "<h1 class='exito'>$errores</h1>";
+                endif;
+
+            ?>
+
         <a class="panel" href="panelDeControlDestinos.php">Panel de control de Destinos</a>
         <a class="panel" href="panelDeControlUsuarios.php">Panel de control de Usuarios</a>
-
+        </div>
         </main>
         <!-- %%%%%%%%%% FOOTER %%%%%%%%%% -->                    
         <footer>
