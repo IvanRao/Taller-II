@@ -54,18 +54,32 @@ session_start();
 
                 $resultado = $_GET['resultado'];
 
-                if ($resultado=="error"):
-                    $errores= "Hubo un error al loguearse, por favor intente de nuevo";
-                    echo "<div id='acerca'>";
-                    echo "<h1 class='error'>$errores</h1>";
-                    echo "</div>";
-                endif;
-                if ($resultado=="exito"):
-                    $errores= "Sesión iniciada con exito!";
-                    echo "<div id='acerca'>";
-                    echo "<h1 class='exito'>$errores</h1>";
-                    echo "</div>";
-                endif;
+                switch ($resultado) {
+                    case "error":
+                        $errores= "Hubo un error al loguearse, por favor intente de nuevo";
+                        echo "<div id='acerca'>";
+                        echo "<h1 class='error'>$errores</h1>";
+                        echo "</div>";
+                        break;
+                    case "exito":
+                        $errores= "Sesión iniciada con exito!";
+                        echo "<div id='acerca'>";
+                        echo "<h1 class='exito'>$errores</h1>";
+                        echo "</div>";
+                        break;
+                    case "nolog":
+                        $errores= "Debe iniciar sesión y ser administrador para poder entrar a esta pagina";
+                        echo "<div id='acerca'>";
+                        echo "<h1 class='error'>$errores</h1>";
+                        echo "</div>";
+                        break;
+                    case "noadmin":
+                        $errores= "Debe ser administrador para poder entrar a esta pagina";
+                        echo "<div id='acerca'>";
+                        echo "<h1 class='error'>$errores</h1>";
+                        echo "</div>";
+                        break;
+                }
 
             ?>
 

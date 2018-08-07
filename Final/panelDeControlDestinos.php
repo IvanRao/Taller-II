@@ -4,6 +4,12 @@ require("database/galeria.php");
 require("funciones.php");
 session_start();
 
+if(empty($_SESSION["usuario"])){
+    header("Location:index.php?resultado=nolog");
+}elseif ($_SESSION["usuario"]["rol"] == 0){
+    header("Location:index.php?resultado=noadmin");
+}
+
 ?>
 
 <html>

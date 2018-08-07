@@ -167,6 +167,17 @@ h3 {
     font-weight: bold;
 }
 
+#panel-menu-boton {
+    font-size: 35;
+    text-align: center;
+}
+
+#panel-menu {
+    text-align: center;
+    margin: auto;
+    padding: 10px;
+}
+
 .panel:hover{
     font-size: 15;
     text-align: right;

@@ -1,9 +1,14 @@
 <?php
 
 require ('database/galeria.php');
-// require ('arrays.php');
 require ('funciones.php');
 session_start();
+
+if(empty($_SESSION["usuario"])){
+    header("Location:index.php?resultado=nolog");
+}elseif ($_SESSION["usuario"]["rol"] == 0){
+    header("Location:index.php?resultado=noadmin");
+}
 
 ?>
 
@@ -46,23 +51,33 @@ session_start();
 
         <!-- %%%%%%%%%% CUERPO %%%%%%%%%% -->     
         <main> 
-        <div id="acerca">
-            <?php
+            <div id="panel-menu">
+                <?php
 
-                error_reporting(E_ALL ^ E_NOTICE);
+                    error_reporting(E_ALL ^ E_NOTICE);
 
-                $resultado = $_GET['resultado'];
+                    $resultado = $_GET['resultado'];
 
-                if ($resultado=="exito"):
-                    $errores= "Sesión iniciada con exito!";
-                    echo "<h1 class='exito'>$errores</h1>";
-                endif;
+                    if ($resultado=="exito"):
+                        $errores= "Sesión iniciada con exito!";
+                        echo "<h1 class='exito'>$errores</h1>";
+                    endif;
 
-            ?>
+                ?>
+            
+                <a href="panelDeControlDestinos.php">
+                    <button class="button" id="panel-menu-boton">
+                        Panel de control de Destinos
+                    </button>
+                </a>
 
-        <a class="panel" href="panelDeControlDestinos.php">Panel de control de Destinos</a>
-        <a class="panel" href="panelDeControlUsuarios.php">Panel de control de Usuarios</a>
-        </div>
+                <a href="panelDeControlUsuarios.php">
+                    <button class="button" id="panel-menu-boton">
+                        Panel de control de Usuarios
+                    </button>
+                </a>
+
+            </div>
         </main>
         <!-- %%%%%%%%%% FOOTER %%%%%%%%%% -->                    
         <footer>

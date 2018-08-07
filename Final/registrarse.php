@@ -46,7 +46,7 @@
                         $resultado = $_GET['resultado'];
 
                         if ($resultado=="error"):
-                            $errores= "Por favor ingresa todos los datos";
+                            $errores= "Alguno de los datos ingresados es incorrecto o esta incompleto";
                             echo "<h1 class='error'>$errores</h1>";
                         endif;
 
